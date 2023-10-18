@@ -64,18 +64,10 @@ class TaskService {
 
     async createTask(taskData) {
         try {
-            var test = {
-                "title": "abc",
-                "description": "Pizza et soupe carine !",
-                "completed": "false"
-        }
-
-        console.log(test);
-        console.log(taskData)
-            const response = await fetch(`${this.taskCreateUrl}`, {
+            const response = await fetch("http://localhost/a/API-php/api/v1/controllers/task_post.php", {
                 // Configurez la requête avec les données de taskData
                 method: 'POST', // Spécifiez la méthode POST pour créer une nouvelle tâche
-                body: JSON.stringify(test),
+                body: JSON.stringify(taskData),
                 headers: {
                     'Content-Type': 'application/json',
                 },
